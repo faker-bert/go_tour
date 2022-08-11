@@ -13,6 +13,7 @@ var Usage = func() {
 }
 
 func main() {
+	fmt.Print(1231212)
 	args := os.Args
 	if args == nil || len(args) < 2 {
 		Usage()
