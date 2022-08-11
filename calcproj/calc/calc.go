@@ -13,12 +13,13 @@ var Usage = func() {
 }
 
 func main() {
-	fmt.Print(1231212)
+	fmt.Print(121)
 	args := os.Args
 	if args == nil || len(args) < 2 {
 		Usage()
 		return
 	}
+	fmt.Print(121)
 	switch args[1] {
 	case "add":
 		if len(args) != 4 {
