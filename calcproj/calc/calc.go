@@ -14,19 +14,18 @@ var Usage = func() {
 
 func main() {
 	args := os.Args
-	fmt.Println(args)
 	if args == nil || len(args) < 2 {
 		Usage()
 		return
 	}
-	switch args[0] {
+	switch args[1] {
 	case "add":
-		if len(args) != 3 {
+		if len(args) != 4 {
 			fmt.Println("Usage: calc add <integer1><integer2>")
 			return
 		}
-		v1, err1 := strconv.Atoi(args[1])
-		v2, err2 := strconv.Atoi(args[2])
+		v1, err1 := strconv.Atoi(args[2])
+		v2, err2 := strconv.Atoi(args[3])
 		if err1 != nil || err2 != nil {
 			fmt.Println("Usage: calc add <integer1><integer2>")
 			return
@@ -34,19 +33,19 @@ func main() {
 		ret := simplemath.Add(v1, v2)
 		fmt.Println("Result: ", ret)
 	case "sqrt":
-		if len(args) != 2 {
+		if len(args) != 3 {
 			fmt.Println("Usage: calc sqrt <integer>")
 			return
 		}
-		v, err := strconv.Atoi(args[1])
+		v, err := strconv.Atoi(args[2])
 		if err != nil {
-			fmt.Println("Usage: calc add <integer1><integer2>")
+			fmt.Println("Usage: calc sqrt <integer>")
 			return
 		}
 		ret := simplemath.Sqrt(v)
 		fmt.Println("Result: ", ret)
 	default:
-		fmt.Println(args)
+		//fmt.Println(args)
 		Usage()
 	}
 
